@@ -44,6 +44,25 @@
       font-family: system-ui, sans-serif;
       font-size: 0.95rem;
     }
+    .about-body {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .about-body img {
+      width: 160px;
+      height: 160px;
+      flex-shrink: 0;
+    }
+    .about-body p {
+      margin: 0;
+    }
+    @media (max-width: 560px) {
+      .about-body {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
     a {
       color: #0b5394;
     }
@@ -63,7 +82,10 @@
 
     <section id="about">
       <h2>About</h2>
-      <p>Kevin is the executive director of Allbritton Journalism Institute. He co-founded The GroundTruth Project — home of Report for America and Report for the World — in 2014, editing and publishing award-winning journalism with leading partners and helping to create more than 1,000 full-time and fellowship roles with hundreds of newsroom partners in dozens of countries. He holds an M.A. in journalism from the University of Southern California’s Annenberg School, where he was a Dean’s Scholar. He’s an adjunct professor at Georgetown University, sits on the board of Gigafact, rescues greyhounds and enjoys the Blue Ridge Mountains.</p>
+      <div class="about-body">
+        <img src="images/headshot.png" alt="Kevin Grant" width="160" height="160">
+        <p>Kevin is the executive director of Allbritton Journalism Institute. He co-founded The GroundTruth Project — home of Report for America and Report for the World — in 2014, editing and publishing award-winning journalism with leading partners and helping to create more than 1,000 full-time and fellowship roles with hundreds of newsroom partners in dozens of countries. He holds an M.A. in journalism from the University of Southern California’s Annenberg School, where he was a Dean’s Scholar. He’s an adjunct professor at Georgetown University, sits on the board of Gigafact, rescues greyhounds and enjoys the Blue Ridge Mountains.</p>
+      </div>
     </section>
 
     <section id="clips">
