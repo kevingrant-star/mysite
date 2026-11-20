@@ -170,6 +170,14 @@
       gap: 1.5rem;
       flex-shrink: 0;
     }
+    .logo-link {
+      display: block;
+      border-radius: 0;
+    }
+    .logo-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
     .about-side img {
       display: block;
       width: 180px;
@@ -271,10 +279,12 @@
       <div class="about-body">
         <div class="about-side">
           <img src="images/headshot.png" alt="Kevin Grant" width="160" height="160">
-          <picture class="logo-cube">
-            <source srcset="images/aji-cube-still.png" media="(prefers-reduced-motion: reduce)">
-            <img src="images/aji-cube.gif" alt="Allbritton Journalism Institute logo" width="300" height="300">
-          </picture>
+          <a class="logo-link" href="https://aji.org/">
+            <picture class="logo-cube">
+              <source srcset="images/aji-cube-still.png" media="(prefers-reduced-motion: reduce)">
+              <img src="images/aji-cube.gif" alt="Allbritton Journalism Institute website" width="300" height="300">
+            </picture>
+          </a>
         </div>
         <p>Kevin is the executive director of Allbritton Journalism Institute. He co-founded The GroundTruth Project — home of Report for America and Report for the World — in 2014, editing and publishing award-winning journalism with leading partners and helping to create more than 1,000 full-time and fellowship roles with hundreds of newsroom partners in dozens of countries. He holds an M.A. in journalism from the University of Southern California’s Annenberg School, where he was a Dean’s Scholar. He’s an adjunct professor at Georgetown University, sits on the board of Gigafact, rescues greyhounds and enjoys the Blue Ridge Mountains.</p>
       </div>
