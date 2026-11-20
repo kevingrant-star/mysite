@@ -17,16 +17,69 @@
       max-width: 40rem;
       margin: 0 auto;
     }
+    header {
+      margin-bottom: 3rem;
+    }
     h1 {
       font-size: 3rem;
-      margin: 0 0 1rem;
+      margin: 0;
       letter-spacing: -0.01em;
+    }
+    .beat {
+      font-size: 1.25rem;
+      color: #555;
+      margin: 0.25rem 0 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.25rem;
+      margin: 2.5rem 0 1rem;
+    }
+    .placeholder {
+      border: 2px dashed #c9a227;
+      background: #fff8e1;
+      color: #7a5c00;
+      padding: 0.75rem 1rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.95rem;
+    }
+    .beat .placeholder {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+    }
+    a {
+      color: #0b5394;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>Kevin</h1>
+    <header>
+      <h1>Kevin Grant</h1>
+      <!-- BEAT: replace the placeholder below with Kevin's beat -->
+      <p class="beat"><span class="placeholder">[Beat to come]</span></p>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <!-- ABOUT: Kevin will provide this text -->
+      <div class="placeholder">[About text to come]</div>
+    </section>
+
+    <section id="clips">
+      <h2>Clips</h2>
+      <!-- CLIPS: Kevin will add stories here later -->
+    </section>
+
+    <footer>
+      <p>You can reach me at <a href="mailto:kevingrant@aji.org">kevingrant@aji.org</a>.</p>
+    </footer>
   </main>
 </body>
 </html>
