@@ -57,19 +57,40 @@
       border-bottom: none;
     }
     .ticker {
-      container-type: inline-size;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
       margin-top: 1.5rem;
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
       font-family: var(--mono);
       font-size: 0.85rem;
+    }
+    .ticker-source {
+      flex-shrink: 0;
+      padding: 0.6rem 1rem 0.6rem 0;
+      margin-right: 1rem;
+      border-right: 1px solid var(--rule);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .ticker-source:hover {
+      text-decoration: underline;
+    }
+    .ticker-window {
+      container-type: inline-size;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
       white-space: nowrap;
     }
     .ticker-track {
       display: flex;
       width: max-content;
-      animation: ticker-scroll 40s linear infinite;
+      animation: ticker-scroll var(--ticker-duration, 90s) linear infinite;
     }
     .ticker:hover .ticker-track,
     .ticker:focus-within .ticker-track {
@@ -82,7 +103,7 @@
       min-width: 100cqw;
       gap: 3rem;
       margin: 0;
-      padding: 0.6rem 1.5rem 0.6rem 0;
+      padding: 0.6rem 3rem 0.6rem 0;
       list-style: none;
     }
     .ticker li::before {
@@ -92,19 +113,27 @@
       vertical-align: middle;
       margin-right: 0.75rem;
     }
-    .ticker .placeholder {
-      padding: 0.1rem 0.5rem;
-      font-family: var(--mono);
-      font-size: 0.85rem;
+    .ticker ul a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .ticker ul a:hover,
+    .ticker ul a:focus {
+      color: var(--accent);
+      text-decoration: underline;
     }
     @keyframes ticker-scroll {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
+    @media (max-width: 600px) {
+      .ticker { flex-direction: column; align-items: stretch; }
+      .ticker-source { border-right: none; border-bottom: 1px solid var(--rule); margin-right: 0; }
+    }
     @media (prefers-reduced-motion: reduce) {
-      .ticker { white-space: normal; }
+      .ticker-window { white-space: normal; }
       .ticker-track { animation: none; width: auto; }
-      .ticker ul { flex-wrap: wrap; gap: 0.5rem 2rem; }
+      .ticker ul { flex-wrap: wrap; justify-content: flex-start; gap: 0.5rem 2rem; padding-right: 0; }
       .ticker ul[aria-hidden="true"] { display: none; }
     }
     section {
@@ -186,19 +215,38 @@
     <header>
       <h1>Kevin Grant</h1>
       <p class="beat">Nonprofit news leader</p>
-      <!-- TICKER: Kevin will provide the news items. Put each item in BOTH lists below (the second copy makes the scroll loop seamlessly). -->
-      <div class="ticker" aria-label="News">
-        <div class="ticker-track">
+      <!-- News ticker: headlines are filled in automatically every hour by .github/workflows/update-ticker.yml. Don't edit between the TICKER markers by hand. -->
+      <div class="ticker" aria-label="Latest from The Washington Sun">
+        <a class="ticker-source" href="https://www.washingtonsun.com/">The Washington Sun</a>
+        <div class="ticker-window">
+          <!-- TICKER:START -->
+          <div class="ticker-track" style="--ticker-duration: 87s">
           <ul>
-          <li><span class="placeholder">[News item 1 to come]</span></li>
-          <li><span class="placeholder">[News item 2 to come]</span></li>
-          <li><span class="placeholder">[News item 3 to come]</span></li>
+            <li><a href="https://www.washingtonsun.com/metro/dc-bottle-bill-lobbying-brianne-nadeau">D.C.’s Bottle Bill Is Dead After a Sustained Lobbying Effort</a></li>
+            <li><a href="https://www.washingtonsun.com/whitehouse/lame-duck-trump-gets-a-role-he-likes-when-focusing-abroad-prized-guest">Lame-Duck Trump Gets a Role He Likes: Prized Guest</a></li>
+            <li><a href="https://www.washingtonsun.com/metro/dc/ankit-jain-dc-council-candidacy">Shadow Senator Ankit Jain Makes a Bid for D.C. Council</a></li>
+            <li><a href="https://www.washingtonsun.com/sports/capitals/capitals-struggles-four-game-losing-streak">What's Wrong With the Caps?</a></li>
+            <li><a href="https://www.washingtonsun.com/metro-newsletter/no-immediate-accountability">The Washington Sun Metro: ‘No Immediate Accountability’</a></li>
+            <li><a href="https://www.washingtonsun.com/campaigns/shelley-moore-capito-republicans-midterm-elections">Shelley Moore Capito Says Republicans Came Out but ‘Didn’t Vote for Us’</a></li>
+            <li><a href="https://www.washingtonsun.com/newsletters/blast-off">Morning Sun: Blast, Off</a></li>
+            <li><a href="https://www.washingtonsun.com/metro/culture/social-capital-column-debut-dc">Social Capital: A Column About D.C.’s People, Places and Parties</a></li>
+            <li><a href="https://www.washingtonsun.com/metro/dc/dc-mold-logan-circle-shooting">After the Logan Circle Shooting, an Old Foe Comes Back Into Focus: Mold</a></li>
+            <li><a href="https://www.washingtonsun.com/health/maha-world-stephen-miller-fda">MAGA Lost the Midterms. MAHA Is Energized.</a></li>
           </ul>
           <ul aria-hidden="true">
-          <li><span class="placeholder">[News item 1 to come]</span></li>
-          <li><span class="placeholder">[News item 2 to come]</span></li>
-          <li><span class="placeholder">[News item 3 to come]</span></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/metro/dc-bottle-bill-lobbying-brianne-nadeau">D.C.’s Bottle Bill Is Dead After a Sustained Lobbying Effort</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/whitehouse/lame-duck-trump-gets-a-role-he-likes-when-focusing-abroad-prized-guest">Lame-Duck Trump Gets a Role He Likes: Prized Guest</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/metro/dc/ankit-jain-dc-council-candidacy">Shadow Senator Ankit Jain Makes a Bid for D.C. Council</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/sports/capitals/capitals-struggles-four-game-losing-streak">What's Wrong With the Caps?</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/metro-newsletter/no-immediate-accountability">The Washington Sun Metro: ‘No Immediate Accountability’</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/campaigns/shelley-moore-capito-republicans-midterm-elections">Shelley Moore Capito Says Republicans Came Out but ‘Didn’t Vote for Us’</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/newsletters/blast-off">Morning Sun: Blast, Off</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/metro/culture/social-capital-column-debut-dc">Social Capital: A Column About D.C.’s People, Places and Parties</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/metro/dc/dc-mold-logan-circle-shooting">After the Logan Circle Shooting, an Old Foe Comes Back Into Focus: Mold</a></li>
+            <li><a tabindex="-1" href="https://www.washingtonsun.com/health/maha-world-stephen-miller-fda">MAGA Lost the Midterms. MAHA Is Energized.</a></li>
           </ul>
+          </div>
+          <!-- TICKER:END -->
         </div>
       </div>
     </header>
