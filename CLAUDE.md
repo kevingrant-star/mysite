@@ -12,10 +12,10 @@ This repository is a journalist's personal website. GitHub Pages publishes it fr
 
 Keep every change in this style, inspired by restofworld.org (the look only, never its logo or name):
 
-- **Colors:** white background, near-black text (#111111), one rich green accent (#0B6E4F) for labels, links and a 6px bar across the top of the page. Light grey rules (#CACACA) separate sections. No other colors, except the dashed yellow boxes that mark spots waiting for Kevin's text.
+- **Colors:** white background, near-black text (#111111), one deep purple accent (#4B1D8F) for labels, links and a 6px bar across the top of the page. Light grey rules (#CACACA) separate sections. No other colors, except the dashed yellow boxes that mark spots waiting for Kevin's text.
 - **Type:** three fonts, loaded free from Google Fonts.
   - Name and story headlines: Inter, bold, large and tight.
-  - Small labels (the beat line and section headings like About and Clips): IBM Plex Mono, uppercase, widely letter-spaced, in the green accent, with a grey rule underneath. The uppercase comes from CSS; the words themselves stay as Kevin wrote them.
+  - Small labels (the beat line and section headings like About and Clips): IBM Plex Mono, uppercase, widely letter-spaced, in the purple accent, with a grey rule underneath. The uppercase comes from CSS; the words themselves stay as Kevin wrote them.
   - Long reading text (the About paragraph, story summaries): Georgia serif, about 1.15rem, with generous line spacing.
   - Small print (the contact line): Inter, grey.
 - **Space:** one centered column about 48rem wide, with plenty of white space between sections (about 3.5rem). Clean and uncluttered, with no shadows, rounded cards or decoration.
