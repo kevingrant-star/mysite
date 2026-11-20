@@ -21,3 +21,4 @@ Keep every change in this style, inspired by restofworld.org (the look only, nev
 - **Space:** one centered column about 48rem wide, with plenty of white space between sections (about 3.5rem). Clean and uncluttered, with no shadows, rounded cards or decoration.
 - **Photos:** the headshot sits left of the About text on wide screens and above it on phones.
 - Everything must work on phones. Long links wrap instead of running off the screen.
+- **News ticker:** a slow, continuously scrolling line of news items sits directly under the beat line, between thin grey rules, in IBM Plex Mono with a small accent-colored dot before each item. It pauses when someone hovers over it, and it stays still for visitors who have turned off motion in their device settings. Each item appears twice in index.html (the second list makes the loop seamless), so add, change or remove items in both lists.
